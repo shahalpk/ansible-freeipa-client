@@ -22,7 +22,16 @@
     state=restarted
   ignore_errors: true
 
-
+- name: restart ssh (via upstart)
+  tags:
+    - sssd
+    - freeipaclient
+  become: true
+  service:
+    name=ssh
+    state=restarted
+  ignore_errors: true
+  
 - name: restart ssh
   tags:
     - sssd
@@ -31,3 +40,4 @@
   service:
     name=ssh
     state=restarted
+  ignore_errors: true
