@@ -10,7 +10,7 @@
     name=sssd
     state=restarted
     use=upstart
-  ignore_errors=true
+  ignore_errors: true
 
 - name: restart sssd 
   tags:
@@ -20,7 +20,7 @@
   service:
     name=sssd
     state=restarted
-  ignore_errors=true
+  ignore_errors: true
 
 
 - name: restart ssh
