@@ -2,6 +2,7 @@
 # handlers file for ansible-freeipa-client
 #
 - name: restart sssd (via upstart)
+  listen: "restart sssd"
   tags:
     - sssd
     - freeipaclient
@@ -12,7 +13,8 @@
     use=upstart
   ignore_errors: true
 
-- name: restart sssd 
+- name: restart sssd (via service)
+  listen: "restart sssd"
   tags:
     - sssd
     - freeipaclient
@@ -23,6 +25,7 @@
   ignore_errors: true
 
 - name: restart ssh (via upstart)
+  listen: "restart ssh"
   tags:
     - sssd
     - freeipaclient
@@ -32,7 +35,8 @@
     state=restarted
   ignore_errors: true
   
-- name: restart ssh
+- name: restart ssh (via service)
+  listen: "restart ssh"
   tags:
     - sssd
     - freeipaclient
