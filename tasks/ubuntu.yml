@@ -14,10 +14,11 @@
     - sssd
     - freeipaclient
   become: true
+  notify:
+    - restart sssd
+    - restart ssh
   lineinfile:
     dest: /etc/sssd/sssd.conf
     regexp: '^services.*'
     line: 'services = nss, pam, ssh, sudo'
-- name: Restart sssd and ssh 
-  become: true
-  command: "service sssd restart && service ssh restart"
+
