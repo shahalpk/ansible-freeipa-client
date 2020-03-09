@@ -9,6 +9,7 @@
   service:
     name=sssd
     state=restarted
+    use=service
 
 - name: restart ssh
   tags:
@@ -18,3 +19,4 @@
   service:
     name=ssh
     state=restarted
+    use=service
