@@ -7,7 +7,7 @@
     - sssd
     - freeipaclient
   become: true
-  command: service sssd restart
+  command: service sssd restart warn=false
 
 - name: restart ssh (via service)
   listen: "restart ssh"
@@ -15,4 +15,4 @@
     - sssd
     - freeipaclient
   become: true
-  command: service ssh restart
+  command: service ssh restart warn=false
